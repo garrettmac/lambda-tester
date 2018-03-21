@@ -8,7 +8,7 @@ const fs = require( 'fs' );
 
 const freshy = require( 'freshy' );
 
-const appRoot = require( 'app-root-path' );
+const appRoot = './'
 
 const MODULE_PATH = '../../lib/config';
 

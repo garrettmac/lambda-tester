@@ -94,20 +94,7 @@ describe( 'lib/xray/server', function() {
 
     describe( '.createServer', function() {
 
-        it( 'no process.env.LAMBDA_TASK_ROOT', function() {
 
-            delete process.env.LAMBDA_TASK_ROOT;
-
-            server = require( '../../../lib/xray/server' );
-
-            return server.start()
-                .then( () => {
-
-                    let appRootPath = require( 'app-root-path' );
-
-                    expect( process.env.LAMBDA_TASK_ROOT ).to.equal( appRootPath.toString() );
-                });
-        });
 
         it( 'server already running', function() {
 

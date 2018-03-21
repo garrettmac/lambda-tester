@@ -10,7 +10,7 @@ const fs = require( 'fs' );
 
 const freshy = require( 'freshy' );
 
-const appRoot = require( 'app-root-path' );
+const appRoot = './'
 
 const LAMBDA_TESTER_PATH = '../../lib/index';
 
@@ -124,22 +124,7 @@ describe( 'lib/index', function() {
         LambdaTester = require( LAMBDA_TESTER_PATH );
     });
 
-    describe( 'environment variables', function() {
 
-        it( 'LAMBDA_TASK_ROOT', function() {
-
-            expect( process.env.LAMBDA_TASK_ROOT ).to.exist;
-
-            let path = require( 'app-root-path' ).toString();
-
-            expect( process.env.LAMBDA_TASK_ROOT ).to.equal( path );
-
-            // should be our root - let's try to get our package.json
-            let stats = fs.statSync( process.env.LAMBDA_TASK_ROOT + '/package.json' );
-
-            expect( stats.isFile() ).to.be.true;
-        });
-    });
 
     describe( 'LambdaTester', function() {
 
